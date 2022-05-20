@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    function posting(){
+        let name = $('#name').val
+        let file = $('#file')[0].flies[0]
+        let form_data = new FormData()
+
+        form_data.append('name_give',name)
+        form_data.append('file_give',file)
+
+        $.ajax({
+            type: 'POST',
+            url: '/upload',
+            data: form_data,
+            success: function (response) {
+                $('#upload_img').attr('src',window.URL.createObjectURL(file))
+            }
+        })
+
+    }
+
+</script>
+
+<body>
+<div class="file-upload">
+
+    <img id="upload_img" src="" width="300px" height="300px">
+    <input type="file" id="file">
+    <input type="text" id="name">
+    <button onclick="posting()">업로드</button>4
+</div>
+
+</body>
+</html>
