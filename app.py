@@ -7,7 +7,7 @@ app = Flask(__name__)
 
 #DB 연결 코드
 from pymongo import MongoClient
-client = MongoClient('mongodb+srv://test:sparta@cluster0.ibmct.mongodb.net/Cluster0?retryWrites=true&w=majority')
+client = MongoClient('')
 db = client.dbsparta
 
 # DB 연결 코드
